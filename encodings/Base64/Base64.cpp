@@ -23,7 +23,7 @@ namespace Base64 {
 		0x2A, 0x2B, 0x2C, 0x2D, 0x2E, 0x2F, 0x30, 0x31, 0x32, 0x33
 	};
 
-	int Encode(const unsigned char* const input, char* const output, const unsigned long n) {
+	ReturnCode Encode(const unsigned char* const input, char* const output, const unsigned long n) {
 		if (input == nullptr)
 			return NULL_INPUT;
 
@@ -65,10 +65,10 @@ namespace Base64 {
 		if (j < n)
 			output[j] = '\0';
 
-		return 0;
+		return SUCCESS;
 	}
 
-	int Decode(const char* const input, unsigned char* const output, const unsigned long n) {
+	ReturnCode Decode(const char* const input, unsigned char* const output, const unsigned long n) {
 		if (input == nullptr)
 			return NULL_INPUT;
 
@@ -104,6 +104,6 @@ namespace Base64 {
 		if (j < n)
 			output[j] = '\0';
 
-		return 0;
+		return SUCCESS;
 	}
 }
